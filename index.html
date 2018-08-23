@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/index.min.css" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
   </head>
   <body>
     <!-- BEGIN Navigation -->
@@ -30,31 +31,95 @@
 
     <!-- BEGIN Content -->
 
-
+    <main>
+      <section class="section-image-maxteamer">
+        <a href="/reinigungssysteme">
+          <div>
+            <h1>Maximal.</h1>
+            <h2>Chemikalienfrei. Schnell. Effektiv.</h2>
+            <span>Mehr erfahren</span>
+          </div>
+          <img src="/images/maxteamer.png" srcset="/images/maxteamer@2x.png 2x, /images/maxteamer.png 1x" alt="Reinigungssysteme">
+        </a>
+      </section>
+      <section class="section-image-soulmat">
+        <a href="/schlafsysteme">
+          <div>
+            <h1>Zum Liegen schön.</h1>
+            <h2>Hygienische Sauberkeit. Perfekte Ergonomie.</h2>
+            <span>Mehr erfahren</span>
+          </div>
+          <img id="img-soulmat" src="/images/soulmat_compact.png" srcset="/images/soulmat_compact@2x.png 2x, /images/soulmat_compact.png 1x" alt="Schlafsysteme">
+        </a>
+      </section>
+      <section class="section-image-kirby">
+        <a href="/saugsysteme">
+          <div>
+            <h1>Beispiellos.</h1>
+            <h2>Und der Konkurrenz weit voraus.</h2>
+            <span>Mehr erfahren</span>
+          </div>
+          <img src="/images/kirby.png" srcset="/images/kirby@2x.png 2x, /images/kirby.png 1x" alt="Saugsysteme">
+        </a>
+      </section>
+      <section class="section-contact">
+        <div>
+          <a href="/kontakt">
+            <p>Sie haben Fragen?<br>Wir helfen Ihnen gerne.</p>
+            <span>Kontaktieren Sie uns</span>
+          </a>
+        </div>
+      </section>
+    </main>
 
     <!-- END Content -->
 
     <!-- BEGIN Footer -->
 
     <footer>
-      <a href="#">Zum Seitenanfang</a>
-      <ul class="ul-links-primary">
-        <li><a href="/reinigungssysteme">Reinigungssysteme</a></li>
-        <li><a href="/schlafsysteme">Schlafsysteme</a></li>
-        <li><a href="/saugsysteme">Saugsysteme</a></li>
-        <li><a href="/wir">Über uns</a></li>
-        <li><a href="/karriere">Karriere</a></li>
-        <li><a href="/kontakt">Beratung &amp; Kontakt</a></li>
-      </ul>
-      <ul class="ul-links-secondary">
-        <li><a href="/wir#oeffnungszeiten">Öffnungszeiten</a></li>
-        <li><a href="/wir#anfahrt">Anfahrt</a></li>
-        <li><a href="/impressum">Impressum</a></li>
-        <li><a href="/datenschutz">Datenschutzerklärung</a></li>
-      </ul>
-      <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Wamax</p>
+      <div>
+        <a href="#">Zum Seitenanfang</a>
+        <div>
+          <ul class="ul-links-primary">
+            <li><a href="/reinigungssysteme">Reinigungssysteme</a></li>
+            <li><a href="/schlafsysteme">Schlafsysteme</a></li>
+            <li><a href="/saugsysteme">Saugsysteme</a></li>
+            <li><a href="/wir">Über uns</a></li>
+            <li><a href="/karriere">Karriere</a></li>
+            <li><a href="/kontakt">Beratung &amp; Kontakt</a></li>
+          </ul>
+          <ul class="ul-links-secondary">
+            <li><a href="/wir#oeffnungszeiten">Öffnungszeiten</a></li>
+            <li><a href="/wir#anfahrt">Anfahrt</a></li>
+            <li><a href="/impressum">Impressum</a></li>
+            <li><a href="/datenschutz">Datenschutzerklärung</a></li>
+          </ul>
+        </div>
+        <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Wamax</p>
+      </div>
     </footer>
 
     <!-- END Footer -->
+
+    <!-- BEGIN Scripts -->
+
+    <script>
+      document.body.onload = didResize;
+      document.body.onresize = didResize;
+
+      function didResize() {
+        var imageSoulmat = document.getElementById("img-soulmat");
+
+        if (window.innerWidth > 1024) {
+          imageSoulmat.src = "/images/soulmat.png";
+          imageSoulmat.srcset = "/images/soulmat@2x.png 2x, /images/soulmat.png 1x";
+        } else {
+          imageSoulmat.src = "/images/soulmat_compact.png";
+          imageSoulmat.srcset = "/images/soulmat_compact@2x.png 2x, /images/soulmat_compact.png 1x";
+        }
+      }
+    </script>
+
+    <!-- END Scripts -->
   </body>
 </html>
