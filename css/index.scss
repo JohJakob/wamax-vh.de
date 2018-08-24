@@ -7,7 +7,7 @@ $color__green: #43a647;
 $color__blue: #2f74ba;
 
 $size__nav-icon: 25px;
-$size__max-width: 1200px;
+$size__max-width: 1000px;
 $size__image-base-width: 300px;
 
 * {
@@ -201,6 +201,90 @@ main {
       width: 100%
     }
   }
+
+  article {
+    margin: 0 auto;
+    padding: 2em 1em;
+    max-width: $size__max-width;
+    text-align: center;
+
+    h1 {
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+
+    h3, p, ul {
+      font-weight: 300;
+      text-align: left
+    }
+
+    h3 {
+      padding-top: .5em;
+      font-size: 1.5em
+    }
+
+    img {
+      margin: 2em 0;
+      width: 100%
+    }
+
+    p, ul {
+      margin: 1em 0;
+      line-height: 1.5
+    }
+
+    input[type=button] {
+      display: none
+    }
+
+    label {
+      margin: 2em 0;
+      color: lighten($color__black, 40%);
+      font-size: .8em;
+      font-weight: 300;
+      display: block;
+      cursor: pointer;
+
+      &:hover {
+        color: $color__black
+      }
+
+      &:after {
+        margin: .5em auto 0 auto;
+        width: 32px;
+        height: 32px;
+        content: "";
+        background: url("/images/gallery_button.svg") no-repeat center center;
+        display: block
+      }
+    }
+
+    ul {
+      margin-left: 1em;
+      list-style: none;
+
+      li:before {
+        width: 4px;
+        height: 4px;
+        content: "";
+        background: $color__black;
+        border-radius: 50%;
+        display: inline-block;
+        transform: translate(-.5em, -.25em)
+      }
+    }
+
+    iframe {
+      margin-top: 1em;
+      width: 100%;
+      height: 47.25vw
+    }
+  }
 }
 
 footer {
@@ -211,7 +295,7 @@ footer {
   // border-top: 1px solid darken($color__white, 20%);
 
   a, p {
-    color: lighten($color__deep-black, 40%)
+    color: lighten($color__black, 40%)
   }
 
   a:hover {
@@ -241,6 +325,10 @@ footer {
 }
 
 // Classes
+
+.nav-li-active a {
+  color: $color__green
+}
 
 .section-image-maxteamer {
   text-align: center;
@@ -273,6 +361,90 @@ footer {
   }
 }
 
+.article-img-maxteamer {
+  max-width: $size__image-base-width * 1.5
+}
+
+.p-introduction {
+  text-align: center
+}
+
+// IDs
+
+#div-gallery {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: none;
+  z-index: 3;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  label {
+    margin: 0;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &:after {
+      background: none
+    }
+  }
+
+  ul {
+    margin: 0;
+    width: 100%;
+    transform: translateY(50vh)
+  }
+
+  li {
+    transform: translateY(-50%);
+    display: none;
+
+    &:before {
+      display: none
+    }
+
+    img {
+      margin: 0 auto;
+      width: 100%;
+      max-width: $size__image-base-width * 2;
+      max-height: 100vh;
+      object-fit: contain;
+      display: block
+    }
+  }
+
+  .li-image-visible {
+    display: block
+  }
+}
+
+#label-button-close-gallery {
+  top: 1em;
+  right: 1em;
+  background-image: url("/images/gallery_close_button.svg");
+  z-index: 4
+}
+
+#label-button-prev-gallery {
+  bottom: 3em;
+  left: 1em;
+  background-image: url("/images/gallery_prev_button.svg")
+}
+
+#label-button-next-gallery {
+  right: 1em;
+  bottom: 3em;
+  background-image: url("/images/gallery_next_button.svg")
+}
+
 // Screen Size Adaptations
 
 @media (min-width: 1025px) {
@@ -283,7 +455,11 @@ footer {
       margin: 0 auto;
       max-width: $size__max-width;
       display: flex;
-      justify-content: space-between
+      justify-content: space-between;
+
+      & > a {
+        margin: 0
+      }
     }
 
     label {
@@ -305,6 +481,10 @@ footer {
 
         &:first-child, &:last-child {
           margin: 0
+        }
+
+        &:last-child {
+          padding-right: 0
         }
 
         a {
@@ -345,6 +525,16 @@ footer {
       img {
         margin-right: 2em;
         order: 1
+      }
+    }
+
+    article {
+      padding-left: 6em;
+      padding-right: 6em;
+
+      iframe {
+        width: 100%;
+        height: 427.5px
       }
     }
   }
@@ -405,5 +595,12 @@ footer {
 
   .ul-links-primary {
     margin-right: 10em
+  }
+
+  // IDs
+
+  #label-button-prev-gallery, #label-button-next-gallery {
+    bottom: 50vh;
+    transform: translateY(50%)
   }
 }
