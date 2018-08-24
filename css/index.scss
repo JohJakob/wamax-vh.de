@@ -383,6 +383,10 @@ footer {
   transform: translateX(-1em)
 }
 
+.article-img-kirby {
+  max-width: $size__image-base-width / 2
+}
+
 .p-introduction {
   text-align: center
 }
@@ -615,8 +619,33 @@ footer {
     }
   }
 
+  .article-image-left {
+    display: flex;
+    justify-content: center;
+  
+    div {
+      margin: auto 0 auto 2em;
+      text-align: left;
+      order: 2
+    }
+
+    p {
+      text-align: left
+    }
+  
+    img {
+      margin-right: 2em;
+      object-fit: contain;
+      order: 1
+    }
+  }
+
   .article-img-soulmat {
     transform: none
+  }
+
+  .article-img-kirby {
+    max-width: $size__image-base-width * .75
   }
 
   .ul-links-primary {
