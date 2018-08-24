@@ -391,6 +391,24 @@ footer {
   text-align: center
 }
 
+.article-about {
+  text-align: left;
+
+  h3 {
+    margin-bottom: .5em
+  }
+
+  figure {
+    margin: .25em;
+    display: inline-block;
+
+    img {
+      width: 169px;
+      border-radius: 10px
+    }
+  }
+}
+
 .span-uppercase {
   text-transform: uppercase
 }
