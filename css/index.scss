@@ -279,6 +279,19 @@ main {
       }
     }
 
+    figure {
+      margin-bottom: 1em;
+
+      img {
+        margin: 0
+      }
+
+      figcaption {
+        font-size: .8em;
+        font-weight: 300
+      }
+    }
+
     iframe {
       margin-top: 1em;
       width: 100%;
@@ -365,8 +378,17 @@ footer {
   max-width: $size__image-base-width * 1.5
 }
 
+.article-img-soulmat {
+  max-width: $size__image-base-width * 2;
+  transform: translateX(-1em)
+}
+
 .p-introduction {
   text-align: center
+}
+
+.span-uppercase {
+  text-transform: uppercase
 }
 
 // IDs
@@ -591,6 +613,10 @@ footer {
         font-size: 1.5em
       }
     }
+  }
+
+  .article-img-soulmat {
+    transform: none
   }
 
   .ul-links-primary {
