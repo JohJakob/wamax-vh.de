@@ -391,9 +391,23 @@ footer {
   text-align: center
 }
 
-.article-about {
+.article-text {
+  font-weight: 300;
   text-align: left;
+  display: block;
 
+  &:after {
+    bottom: .3em;
+    margin-left: .2em;
+    width: 12px;
+    height: 12px;
+    content: "";
+    background: url("/images/link_arrow.svg") no-repeat center center;
+    display: inline-block
+  }
+}
+
+.article-about {
   h3 {
     margin-bottom: .5em
   }
@@ -407,6 +421,10 @@ footer {
       border-radius: 10px
     }
   }
+}
+
+.a-link-blue {
+  color: $color__blue;
 }
 
 .span-uppercase {
@@ -668,6 +686,12 @@ footer {
 
   .ul-links-primary {
     margin-right: 10em
+  }
+
+  .footer-short-page {
+    bottom: 0;
+    position: absolute;
+    width: 100%
   }
 
   // IDs
