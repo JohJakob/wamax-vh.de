@@ -454,6 +454,10 @@ footer {
   text-transform: uppercase
 }
 
+.only-desktop {
+  display: none
+}
+
 // IDs
 
 #div-gallery {
@@ -534,7 +538,7 @@ footer {
 
 @media (min-width: 1025px) {
   header {
-    position: initial;
+    position: inherit;
 
     nav {
       margin: 0 auto;
@@ -552,11 +556,11 @@ footer {
     }
 
     ul {
-      position: initial;
+      position: inherit;
       padding: 0;
-      width: initial;
+      width: inherit;
       height: auto;
-      max-height: initial;
+      max-height: inherit;
       background: none;
       display: flex;
 
@@ -651,7 +655,7 @@ footer {
 
   .section-image-soulmat {
     a {
-      display: initial
+      display: inherit
     }
 
     div {
@@ -715,6 +719,14 @@ footer {
     bottom: 0;
     position: absolute;
     width: 100%
+  }
+
+  .only-mobile {
+    display: none
+  }
+
+  .only-desktop {
+    display: inherit
   }
 
   // IDs
