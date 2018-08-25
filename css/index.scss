@@ -352,6 +352,14 @@ footer {
   }
 }
 
+noscript p {
+  padding: 1em;
+  font-size: .8em;
+  background: darken($color__white, 5%);
+  border: 1px solid darken($color__white, 20%);
+  border-radius: 10px
+}
+
 // Classes
 
 .nav-li-active a {
